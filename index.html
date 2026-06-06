@@ -144,6 +144,199 @@
   </div>
 </div></section>
 
+<section id="diagrams">
+<style>
+  #diagrams .diag-pair{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:32px}
+  #diagrams .diag-block{background:var(--ground-2);border:1px solid var(--line);border-radius:12px;padding:22px 20px 18px}
+  #diagrams .diag-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--brass);font-weight:600;margin-bottom:12px;font-family:'Spectral'}
+  @media(max-width:760px){#diagrams .diag-pair{grid-template-columns:1fr}}
+</style>
+<div class="wrap">
+  <div class="kicker">How it comes to be &middot; where it lives</div>
+  <h2>Two views of the machine.</h2>
+  <p class="body">The first diagram traces how a single Voices run unfolds — from choosing the artifact through parallel per-voice dispatch to the two-channel output that never collapses. The second shows where Voices sits in the portfolio: which products it reads, what it produces, and the governance loop that holds it together.</p>
+
+  <div class="diag-pair">
+
+    <!-- DIAGRAM 1: FLOW — How it comes to be -->
+    <div class="diag-block">
+      <div class="diag-label">How it comes to be</div>
+      <svg viewBox="0 0 480 310" width="100%" height="auto" style="max-width:480px;display:block" xmlns="http://www.w3.org/2000/svg" aria-label="Flow diagram: how a Voices run works">
+        <defs>
+          <linearGradient id="fg-flow" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#E8772B"/>
+            <stop offset="100%" stop-color="#7E8A98"/>
+          </linearGradient>
+          <linearGradient id="fg-assert" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#7E8A98"/>
+            <stop offset="100%" stop-color="#AAB4C0"/>
+          </linearGradient>
+          <linearGradient id="fg-dissent" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#E8772B"/>
+            <stop offset="100%" stop-color="#F2A24A"/>
+          </linearGradient>
+          <marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#C9A45C" opacity="0.75"/>
+          </marker>
+          <marker id="arr-steel" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#7E8A98" opacity="0.75"/>
+          </marker>
+        </defs>
+
+        <!-- Node 1: Choose artifact -->
+        <rect x="8" y="116" width="76" height="40" rx="7" fill="#2b2219" stroke="#C9A45C" stroke-width="1.2"/>
+        <text x="46" y="131" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="9.5" fill="#ECE3D4">Choose</text>
+        <text x="46" y="143" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="9.5" fill="#ECE3D4">artifact</text>
+
+        <!-- Arrow 1→2 -->
+        <line x1="84" y1="136" x2="102" y2="136" stroke="#C9A45C" stroke-width="1.4" marker-end="url(#arr)"/>
+
+        <!-- Node 2: Compose panel -->
+        <rect x="104" y="116" width="76" height="40" rx="7" fill="#2b2219" stroke="#C9A45C" stroke-width="1.2"/>
+        <text x="142" y="131" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="9.5" fill="#ECE3D4">Compose</text>
+        <text x="142" y="143" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="9.5" fill="#ECE3D4">the panel</text>
+
+        <!-- Arrow 2→3 -->
+        <line x1="180" y1="136" x2="198" y2="136" stroke="#C9A45C" stroke-width="1.4" marker-end="url(#arr)"/>
+
+        <!-- Node 3: Dispatch (parallel) — three stacked agents -->
+        <rect x="200" y="92" width="76" height="30" rx="6" fill="#211a13" stroke="#E8772B" stroke-width="1.2"/>
+        <text x="238" y="109" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#F2A24A">agent ①</text>
+
+        <rect x="200" y="126" width="76" height="30" rx="6" fill="#211a13" stroke="#E8772B" stroke-width="1.5"/>
+        <text x="238" y="143" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#F2A24A">agent ②</text>
+
+        <rect x="200" y="160" width="76" height="30" rx="6" fill="#211a13" stroke="#E8772B" stroke-width="1.2"/>
+        <text x="238" y="177" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#F2A24A">agent ③</text>
+
+        <!-- bracket label: parallel -->
+        <text x="238" y="86" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#9A7F4E" font-style="italic">parallel</text>
+
+        <!-- Arrows 3→4 from all agents -->
+        <line x1="276" y1="107" x2="308" y2="126" stroke="#E8772B" stroke-width="1" stroke-opacity="0.7" marker-end="url(#arr)"/>
+        <line x1="276" y1="141" x2="308" y2="141" stroke="#E8772B" stroke-width="1" stroke-opacity="0.9" marker-end="url(#arr)"/>
+        <line x1="276" y1="175" x2="308" y2="156" stroke="#E8772B" stroke-width="1" stroke-opacity="0.7" marker-end="url(#arr)"/>
+
+        <!-- Node 4: In-voice render (from corpus) -->
+        <rect x="310" y="116" width="82" height="40" rx="7" fill="#2b2219" stroke="#C9A45C" stroke-width="1.2"/>
+        <text x="351" y="130" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="9" fill="#ECE3D4">renders</text>
+        <text x="351" y="141" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#B3A890">in-voice</text>
+        <text x="351" y="151" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#85795F">from corpus</text>
+
+        <!-- Arrow 4→split -->
+        <line x1="392" y1="136" x2="406" y2="136" stroke="#C9A45C" stroke-width="1.4"/>
+
+        <!-- Split fork -->
+        <line x1="406" y1="136" x2="406" y2="96" stroke="#7E8A98" stroke-width="1" stroke-opacity="0.7"/>
+        <line x1="406" y1="136" x2="406" y2="176" stroke="#E8772B" stroke-width="1" stroke-opacity="0.7"/>
+
+        <!-- Channel A: machine assertions -->
+        <line x1="406" y1="96" x2="422" y2="96" stroke="#7E8A98" stroke-width="1.2" marker-end="url(#arr-steel)"/>
+        <rect x="424" y="79" width="50" height="34" rx="6" fill="#17120e" stroke="#5B6573" stroke-width="1.2"/>
+        <text x="449" y="93" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#AAB4C0">machine</text>
+        <text x="449" y="104" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#AAB4C0">assertions</text>
+
+        <!-- Channel B: named dissents -->
+        <line x1="406" y1="176" x2="422" y2="176" stroke="#E8772B" stroke-width="1.2" marker-end="url(#arr)"/>
+        <rect x="424" y="159" width="50" height="34" rx="6" fill="#17120e" stroke="#E8772B" stroke-width="1.2"/>
+        <text x="449" y="173" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#F2A24A">named</text>
+        <text x="449" y="184" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#F2A24A">dissents</text>
+
+        <!-- "never merged" label -->
+        <text x="449" y="227" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#9A7F4E" font-style="italic">never merged</text>
+
+        <!-- Verbatim badge on dissent channel -->
+        <rect x="428" y="197" width="42" height="14" rx="4" fill="rgba(232,119,43,0.12)" stroke="#9A7F4E" stroke-width="0.8"/>
+        <text x="449" y="207" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7" fill="#C9A45C">verbatim</text>
+
+        <!-- Bottom label -->
+        <text x="240" y="296" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F">Choose &rarr; Compose &rarr; Dispatch (parallel) &rarr; Render &rarr; Two-channel output</text>
+      </svg>
+    </div>
+
+    <!-- DIAGRAM 2: ARCHITECTURE — Where it lives -->
+    <div class="diag-block">
+      <div class="diag-label">Where it lives</div>
+      <svg viewBox="0 0 480 310" width="100%" height="auto" style="max-width:480px;display:block" xmlns="http://www.w3.org/2000/svg" aria-label="Architecture diagram: Voices position in the portfolio">
+        <defs>
+          <linearGradient id="ag-voices" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#E8772B" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="#2b2219" stop-opacity="0.9"/>
+          </linearGradient>
+          <linearGradient id="ag-cast" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#C9A45C" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#211a13" stop-opacity="0.8"/>
+          </linearGradient>
+          <marker id="aarr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#C9A45C" opacity="0.8"/>
+          </marker>
+          <marker id="aarr-out" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#E8772B" opacity="0.8"/>
+          </marker>
+        </defs>
+
+        <!-- Intent loop veil — faint background rectangle -->
+        <rect x="10" y="14" width="460" height="254" rx="12" fill="none" stroke="#3a2f23" stroke-width="1.5" stroke-dasharray="5,4"/>
+        <text x="26" y="28" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#3a2f23" font-style="italic">Intent loop — Notice · Spec · Execute · Observe</text>
+
+        <!-- Cast box — left -->
+        <rect x="24" y="90" width="100" height="118" rx="10" fill="url(#ag-cast)" stroke="#C9A45C" stroke-width="1.3"/>
+        <text x="74" y="112" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="13" font-weight="700" fill="#C9A45C">Cast</text>
+        <line x1="44" y1="120" x2="104" y2="120" stroke="#3a2f23" stroke-width="0.8"/>
+        <text x="74" y="135" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#B3A890">registry</text>
+        <text x="74" y="148" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#B3A890">corpus</text>
+        <text x="74" y="161" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#B3A890">archetypes</text>
+        <!-- persona identity label -->
+        <text x="74" y="196" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#85795F" font-style="italic">persona identity</text>
+
+        <!-- Voices box — centre -->
+        <rect x="172" y="78" width="130" height="142" rx="10" fill="url(#ag-voices)" stroke="#E8772B" stroke-width="1.8"/>
+        <text x="237" y="104" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="15" font-weight="800" fill="#ECE3D4">Voices</text>
+        <line x1="190" y1="113" x2="284" y2="113" stroke="#3a2f23" stroke-width="0.8"/>
+        <text x="237" y="128" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#B3A890">Judgment</text>
+        <text x="237" y="141" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#B3A890">position</text>
+        <!-- conservation law badge -->
+        <rect x="191" y="156" width="92" height="16" rx="5" fill="rgba(232,119,43,0.10)" stroke="#9A7F4E" stroke-width="0.8"/>
+        <text x="237" y="167" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#C9A45C">dissent conservation law</text>
+        <!-- two-channel -->
+        <text x="237" y="193" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#85795F">machine assertions</text>
+        <text x="237" y="205" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#85795F">named dissents</text>
+
+        <!-- Forge box — below Cast, left -->
+        <rect x="24" y="224" width="100" height="36" rx="8" fill="#211a13" stroke="#9A7F4E" stroke-width="1"/>
+        <text x="74" y="238" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="11" font-weight="700" fill="#C9A45C">Forge</text>
+        <text x="74" y="251" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F">renders skills</text>
+
+        <!-- You box — right -->
+        <rect x="352" y="118" width="100" height="44" rx="9" fill="#211a13" stroke="#7E8A98" stroke-width="1.2"/>
+        <text x="402" y="137" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="13" font-weight="700" fill="#AAB4C0">You</text>
+        <text x="402" y="152" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#7E8A98">two-channel output</text>
+
+        <!-- Cast → Voices arrow (reads) -->
+        <line x1="124" y1="140" x2="170" y2="140" stroke="#C9A45C" stroke-width="1.4" marker-end="url(#aarr)"/>
+        <text x="147" y="134" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#9A7F4E" font-style="italic">reads</text>
+
+        <!-- Forge ↔ Cast shared arrow (both draw on Cast) -->
+        <line x1="74" y1="208" x2="74" y2="224" stroke="#9A7F4E" stroke-width="1" stroke-dasharray="3,3"/>
+        <!-- sibling label -->
+        <path d="M128,242 Q180,258 172,220" fill="none" stroke="#3a2f23" stroke-width="0.8" stroke-dasharray="3,3"/>
+        <text x="152" y="258" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7" fill="#3a2f23" font-style="italic">sibling</text>
+
+        <!-- Voices → You arrow (output) -->
+        <line x1="302" y1="140" x2="350" y2="140" stroke="#E8772B" stroke-width="1.6" marker-end="url(#aarr-out)"/>
+        <text x="326" y="134" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#9A7F4E" font-style="italic">output</text>
+
+        <!-- Intent loop corners — Notice/Spec/Execute/Observe arrows suggesting cycle -->
+        <path d="M460,40 Q470,149 460,258" fill="none" stroke="#3a2f23" stroke-width="1" stroke-dasharray="4,5" marker-end="url(#aarr)"/>
+
+        <!-- Bottom label -->
+        <text x="237" y="296" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F">Cast (identity) &rarr; Voices (judgment) &rarr; You &nbsp;&nbsp;&middot;&nbsp;&nbsp; Forge is sibling, both draw on Cast</text>
+      </svg>
+    </div>
+
+  </div>
+</div></section>
+
 <section id="veil" class="veil-section"><div class="wrap">
   <div class="kicker">Behind the veil</div>
   <h2>How Voices was forged.</h2>
